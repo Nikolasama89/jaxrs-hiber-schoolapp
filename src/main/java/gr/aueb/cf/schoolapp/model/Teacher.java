@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,17 +19,9 @@ public class Teacher extends AbstractEntity implements IdentifiableEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-
     @Column(unique = true)
     private String vat;
 
     private String firstname;
     private String lastname;
-
-
-    @Override
-    public Long gtId() {
-        return 0L;
-    }
 }

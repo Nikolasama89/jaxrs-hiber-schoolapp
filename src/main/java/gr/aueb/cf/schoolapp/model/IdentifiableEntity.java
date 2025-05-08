@@ -1,5 +1,5 @@
 package gr.aueb.cf.schoolapp.model;
 
 public interface IdentifiableEntity {
-    Long gtId();
+    Long getId();
 }
