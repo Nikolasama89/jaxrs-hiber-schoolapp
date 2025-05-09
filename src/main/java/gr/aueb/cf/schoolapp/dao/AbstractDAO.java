@@ -8,7 +8,7 @@ import jakarta.persistence.criteria.*;
 
 import java.util.*;
 
-public class AbstractDAO <T extends IdentifiableEntity> implements IGenericDAO<T>{
+public abstract class AbstractDAO <T extends IdentifiableEntity> implements IGenericDAO<T>{
 
     private Class<T> persistenceClass;
 
