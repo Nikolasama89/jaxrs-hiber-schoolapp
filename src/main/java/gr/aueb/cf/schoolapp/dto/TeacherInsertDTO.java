@@ -7,21 +7,18 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class TeacherInsertDTO {
+
+public record TeacherInsertDTO (
 
     @NotNull(message = "Το όνομα δεν μπορεί να μην υπάρχει.")
     @Size(min =2, max = 255, message = "Το όνομα πρέπει να είναι μεταξύ 2-255 χαρακτήρων.")
-    private String firstname;
+    String firstname,
 
     @NotNull(message = "Το επώνυμο δεν μπορεί να μην υπάρχει.")
     @Size(min =2, max = 255, message = "Το επώνυμο πρέπει να είναι μεταξύ 2-255 χαρακτήρων.")
-    private String lastname;
+    String lastname,
 
     @NotNull(message = "To ΑΦΜ δεν μπορεί να μην υπάρχει")
     @Size(min = 9, message = "Tο ΑΦΜ πρέπει να περιέχει τουλάχιστον 9 ψηφία.")
-    private String vat;
-}
+    String vat
+){}
