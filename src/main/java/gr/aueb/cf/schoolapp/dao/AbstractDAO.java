@@ -10,6 +10,7 @@ import java.util.*;
 
 public abstract class AbstractDAO <T extends IdentifiableEntity> implements IGenericDAO<T>{
 
+    // ΓΙΑ ΝΑ ΞΕΡΟΥΜΕ ΠΟΙΑ ΚΛΑΣΗ ΘΑ ΕΙΝΑΙ ΠΧ ΘΑ ΕΙΝΑΙ TEACHER, STUDENT
     private Class<T> persistenceClass;
 
     public AbstractDAO() {
@@ -54,6 +55,9 @@ public abstract class AbstractDAO <T extends IdentifiableEntity> implements IGen
                 .createQuery("SELECT COUNT(e) FROM " + persistenceClass.getSimpleName() + " e", Long.class)
                 .getSingleResult();
     }
+
+    // JPQL ΣΥΝΥΘΩΣ ΣΕ ΣΤΑΤΙΚΑ QUERIES ΠΟΥ ΔΕΝ ΣΧΗΜΑΤΙΖΟΝΤΑΙ AT RUNTIME
+    // CRITERIA API ΣΕ QUERIES ΠΟΥ ΚΑΝΟΥΝ ΣΥΝΗΘΩΣ FILTERING!
 
     @Override
     public long getCountByCriteria(Map<String, Object> criteria) {
@@ -117,6 +121,7 @@ public abstract class AbstractDAO <T extends IdentifiableEntity> implements IGen
         return query.getResultList();
     }
 
+    // ΒΟΗΘΗΤΙΚΗ ΓΙΑ ΝΑ ΜΗΝ ΚΑΛΟΥΜΕ ΣΥΝΕΧΕΙΑ ΤΟ JPAHelper
     public EntityManager getEntityManager() {
         return JPAHelper.getEntityManager();
     }
