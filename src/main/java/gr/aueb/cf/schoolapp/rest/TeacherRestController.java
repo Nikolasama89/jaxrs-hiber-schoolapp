@@ -118,8 +118,8 @@ public class TeacherRestController {
             @QueryParam("firstname") @DefaultValue("") String firstname,
             @QueryParam("lastname") @DefaultValue("") String lastname,
             @QueryParam("vat") @DefaultValue("") String vat,
-            @QueryParam("page") @DefaultValue("") Integer page,
-            @QueryParam("size") @DefaultValue("") Integer size
+            @QueryParam("page") @DefaultValue("0") Integer page,
+            @QueryParam("size") @DefaultValue("10") Integer size
     ) throws EntityInvalidArgumentException {
         TeacherFiltersDTO filtersDTO = new TeacherFiltersDTO(firstname, lastname, vat);
         Map<String, Object> criteria;
