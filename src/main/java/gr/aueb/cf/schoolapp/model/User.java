@@ -16,7 +16,7 @@ import java.security.Principal;
 @AllArgsConstructor
 @Entity
 @Table(name = "users")
-public class User implements Principal {                // ΜΕ ΤΟ INTERFACE ΑΥΤΟ ΤΟΝ ΚΑΝΟΥΜΕ ΣΥΣΤΗΜΙΚΟ
+public class User implements IdentifiableEntity, Principal {                // ΜΕ ΤΟ INTERFACE ΑΥΤΟ ΤΟΝ ΚΑΝΟΥΜΕ ΣΥΣΤΗΜΙΚΟ
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
